@@ -8,7 +8,9 @@ router = DefaultRouter()
 router.register('post' ,views.PostViewSet) # 2개의URL을 만들어줍니다.
 # router.urls
 urlpatterns = [
+    path('mypost/<int:pk>/', views.PostDetailAPIView.as_view()),
     path('',include(router.urls)),
+
     path('public/',views.public_post_list),
     
 ]
